@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="multi-thread" parallel="classes" thread-count="2">
-    <!--
-    tests级别：不同test tag下的用例可以在不同的线程下执行
-                相同的test tag只能在同一个线程下执行
-    classes级别：相同的class tag下的用例只能在同一个线程下执行
-                不同的class tag下的用例可以在不同的线程下执行
-    methods级别：所有用例可以在不同的线程下执行
-    thread-count：代表了并发数的最大数量
-    xml配置方式不能指定线程池，只有方法上才可以指定线程池
-    -->
-    <test name="demo1">
+<suite name="parameter">
+    <test name="param">
+        <parameter name="name" value="zhangsan"/>
+        <parameter name="age" value="15"/>
         <classes>
-            <class name="com.fesine.testng.multithread.MultThreadTest"/>
-            <class name="com.fesine.testng.BasicAnnotation"/>
-        </classes>
-    </test>
-
-    <test name="demo2">
-        <classes>
-            <class name="com.fesine.testng.multithread.MultThreadTest"/>
-            <class name="com.fesine.testng.BasicAnnotation"/>
+            <class name="com.fesine.testng.parameter.ParameterTest"/>
         </classes>
     </test>
 </suite>
