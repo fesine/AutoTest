@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test-group">
+    <test name="stu">
+        <classes>
+            <class name="com.fesine.testng.groups.GroupsOnClass1"/>
+            <class name="com.fesine.testng.groups.GroupsOnClass2"/>
+            <class name="com.fesine.testng.groups.GroupsOnClass3"/>
+        </classes>
+    </test>
+
+    <test name="runOnlyOnStuGroup">
+        <!--只执行stu分组的class测试类-->
+        <groups>
+            <run>
+                <include name="stu" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fesine.testng.groups.GroupsOnClass1"/>
+            <class name="com.fesine.testng.groups.GroupsOnClass2"/>
+            <class name="com.fesine.testng.groups.GroupsOnClass3"/>
+        </classes>
+    </test>
+</suite>
