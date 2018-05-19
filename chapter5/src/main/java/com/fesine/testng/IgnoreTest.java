@@ -1,4 +1,4 @@
-package com.fesine.testng.suite;
+package com.fesine.testng;
 
 import org.testng.annotations.Test;
 
