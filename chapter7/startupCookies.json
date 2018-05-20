@@ -1,5 +1,17 @@
 [
   {
+    "description":"这是一个会返回cookies的get请求",
+    "request":{
+      "uri":"/getcookies"
+    },
+    "response":{
+      "text": "return cookies moco",
+      "cookies":{
+        "login":"true"
+      }
+    }
+  },
+  {
     "description":"这是一个没有参数但有cookies的get请求",
     "request": {
       "uri": "/getwithcookies",
