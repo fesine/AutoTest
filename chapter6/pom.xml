@@ -8,17 +8,25 @@
         <artifactId>chapter</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>chapter5</artifactId>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+    <artifactId>chapter6</artifactId>
+
     <dependencies>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.10</version>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>2.41.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>testng-extentsreport</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.0.6</version>
         </dependency>
     </dependencies>
 
+    
 </project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="这是我自己的测试套件">
+    <test name="这是我自己的测试案例">
+        <classes>
+            <class name="com.fesine.extentreport.ExtentReportDemo">
+                <methods>
+                    <include name="test1" />
+                    <include name="test2" />
+                    <include name="test3" />
+                    <include name="testLogDemo" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <!--<listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter" />-->
+        <listener class-name="com.fesine.extentreport.ExtentTestNGIReporterListener" />
+    </listeners>
+</suite>
