@@ -1,0 +1,36 @@
+[
+  {
+    "description":"这是一个没有参数但有cookies的get请求",
+    "request": {
+      "uri": "/getwithcookies",
+      "method":"get",
+      "cookies":{
+        "login":"true"
+      }
+    },
+    "response": {
+      "text":"get with cookies moco"
+    }
+  },
+  {
+    "description":"这是一个没有参数但有cookies的post请求",
+    "request": {
+      "uri": "/postwithcookies",
+      "method":"post",
+      "cookies": {
+        "login": "true"
+      },
+      "json":{
+        "name":"huhansan",
+        "age":"18"
+      }
+    },
+    "response": {
+      "status":200,
+      "json":{
+        "huhansan":"success",
+        "status":"1"
+      }
+    }
+  }
+]

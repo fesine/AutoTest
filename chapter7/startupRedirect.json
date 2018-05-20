@@ -1,0 +1,28 @@
+[
+  {
+    "description":"重定向到百度",
+    "request": {
+      "uri": "/baidu",
+      "method":"get"
+    },
+    "redirectTo":"http://www.baidu.com"
+  },
+  {
+    "description":"重定向到自己路径",
+    "request": {
+      "uri": "/mypath",
+      "method":"get"
+    },
+    "redirectTo":"/mynewpath"
+  },
+  {
+    "description":"被重定向到的路径",
+    "request": {
+      "uri": "/mynewpath",
+      "method":"get"
+    },
+    "response":{
+      "text":"to my new path.是吧"
+    }
+  }
+]
