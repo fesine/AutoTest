@@ -16,9 +16,13 @@ import java.io.File;
 import java.util.*;
 
 public class ExtentTestNGIReporterListener implements IReporter {
-    //生成的路径以及文件名
+    /**
+     * 生成的路径以及文件名
+     */
+
     private static final String OUTPUT_FOLDER = "test-output/";
     private static final String FILE_NAME = "index.html";
+    private static final String DATE_FORMAT = "yyyyMMddHHmmss";
 
     private ExtentReports extent;
 
@@ -94,10 +98,6 @@ public class ExtentTestNGIReporterListener implements IReporter {
             }
 
         }
-//        for (String s : Reporter.getOutput()) {
-//            extent.setTestRunnerOutput(s);
-//        }
-
         extent.flush();
     }
 
@@ -107,13 +107,14 @@ public class ExtentTestNGIReporterListener implements IReporter {
         if(!reportDir.exists()&& !reportDir .isDirectory()){
             reportDir.mkdir();
         }
+        //SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+        //String format = sdf.format(new Date());
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
         // 设置静态文件的DNS
         //怎么样解决cdn.rawgit.com访问不了的情况
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
-
-        htmlReporter.config().setDocumentTitle("api自动化测试报告");
-        htmlReporter.config().setReportName("api自动化测试报告");
+        htmlReporter.config().setDocumentTitle("TestNg测试报告");
+        htmlReporter.config().setReportName("TestNg测试报告");
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);
@@ -133,9 +134,7 @@ public class ExtentTestNGIReporterListener implements IReporter {
                 categories[index] = categoryList.get(index).getName();
             }
         }
-
         ExtentTest test;
-
         if (tests.size() > 0) {
             //调整用例排序，按时间排序
             Set<ITestResult> treeSet = new TreeSet<ITestResult>(new Comparator<ITestResult>() {
@@ -165,8 +164,6 @@ public class ExtentTestNGIReporterListener implements IReporter {
                     //作为子节点进行创建时，设置同父节点的标签一致，便于报告检索。
                     test = extenttest.createNode(name).assignCategory(categories);
                 }
-                //test.getModel().setDescription(description.toString());
-                //test = extent.createTest(result.getMethod().getMethodName());
                 for (String group : result.getMethod().getGroups())
                     test.assignCategory(group);
 
@@ -181,7 +178,6 @@ public class ExtentTestNGIReporterListener implements IReporter {
                 else {
                     test.log(status, "Test " + status.toString().toLowerCase() + "ed");
                 }
-
                 test.getModel().setStartTime(getTime(result.getStartMillis()));
                 test.getModel().setEndTime(getTime(result.getEndMillis()));
             }

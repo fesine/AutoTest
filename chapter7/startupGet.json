@@ -22,5 +22,15 @@
     "response": {
       "text":"我胡汉三又回来啦"
     }
+  },
+  {
+    "request": {
+      "uri": "/template"
+    },
+    "response": {
+      "text": {
+        "template": "your name is ${req.queries['name']} and age is ${req.queries['age']}."
+      }
+    }
   }
 ]

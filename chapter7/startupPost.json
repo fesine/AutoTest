@@ -22,5 +22,17 @@
     "response": {
       "text":"我胡汉三带着参数又回来啦"
     }
+  },
+  {
+    "description":"这是一个响应动态参数的post请求",
+    "request": {
+      "uri": "/template",
+      "method":"post"
+    },
+    "response": {
+      "text": {
+        "template": "your name is ${req.forms['name']} and age is ${req.forms['age']}."
+      }
+    }
   }
 ]
