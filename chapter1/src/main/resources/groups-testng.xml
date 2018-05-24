@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test-suite">
+    <test name="testAll">
+        <classes>
+            <class name="com.fesine.testng.group.TestGroup1"/>
+            <class name="com.fesine.testng.group.TestGroup2"/>
+            <class name="com.fesine.testng.group.TestGroup3"/>
+        </classes>
+    </test>
+    <test name="onlyRunStudentGroup">
+        <groups>
+            <run>
+                <!--<include name="student" />-->
+                <exclude name="teacher" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fesine.testng.group.TestGroup1"/>
+            <class name="com.fesine.testng.group.TestGroup2"/>
+            <class name="com.fesine.testng.group.TestGroup3"/>
+        </classes>
+    </test>
+</suite>

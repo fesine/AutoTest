@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="mult-suite" parallel="methods" thread-count="3">
+    <test name="test">
+        <classes>
+            <class name="com.fesine.testng.multithread.ThreadTest1"/>
+            <class name="com.fesine.testng.multithread.ThreadTest2"/>
+        </classes>
+    </test>
+    <test name="test2">
+        <classes>
+            <class name="com.fesine.testng.multithread.ThreadTest2"/>
+            <class name="com.fesine.testng.multithread.ThreadTest1"/>
+        </classes>
+    </test>
+</suite>
